@@ -1,0 +1,29 @@
+{
+  "name": "interactive-toc-editor",
+  "version": "2.0.0",
+  "description": "Professional Interactive TOC Editor for The Art of Calisthenics - Fully Stabilized",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "dev": "python3 -m http.server 8080",
+    "serve": "npx serve .",
+    "preview": "open http://localhost:8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabosaturno11/interactive-toc-editor.git"
+  },
+  "keywords": [
+    "table-of-contents",
+    "editor",
+    "voice-commands",
+    "calisthenics",
+    "writing-tool",
+    "gradient-editor",
+    "task-management",
+    "professional"
+  ],
+  "author": "Gabo Saturno <gabo@saturnomovement.com>",
+  "license": "MIT",
+  "homepage": "https://gabosaturno11.github.io/interactive-toc-editor/"
+}
