@@ -1219,6 +1219,307 @@
         .auto-save-indicator.show {
             opacity: 1;
         }
+
+        /* Import Styles */
+        .import-zone {
+            border: 2px dashed rgba(102, 126, 234, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: rgba(102, 126, 234, 0.05);
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .import-zone:hover, .import-zone.dragover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.15);
+            transform: scale(1.02);
+        }
+
+        .import-zone.dragover {
+            animation: pulse-border 1s infinite;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { border-color: #667eea; }
+            50% { border-color: #43e97b; }
+        }
+
+        .import-zone-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .import-zone-text {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .import-zone-formats {
+            color: #667eea;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        .hidden-file-input {
+            display: none;
+        }
+
+        /* View Mode Toggle */
+        .view-mode-container {
+            display: flex;
+            gap: 5px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        .view-mode-btn {
+            padding: 8px 16px;
+            background: transparent;
+            border: none;
+            color: #888;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .view-mode-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .view-mode-btn.active {
+            background: #667eea;
+            color: #fff;
+        }
+
+        /* Table View Styles */
+        .toc-table-view {
+            display: none;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .toc-table-view.active {
+            display: table;
+        }
+
+        .toc-table-view th,
+        .toc-table-view td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .toc-table-view th {
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .toc-table-view tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .toc-table-view .level-section { color: #43e97b; font-weight: 600; }
+        .toc-table-view .level-part { color: #667eea; font-weight: 600; }
+        .toc-table-view .level-chapter { color: #feca57; }
+        .toc-table-view .level-subsection { color: #888; padding-left: 20px; }
+        .toc-table-view .level-minor { color: #666; padding-left: 40px; font-size: 0.9rem; }
+
+        /* Raw View Styles */
+        .toc-raw-view {
+            display: none;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .toc-raw-view.active {
+            display: block;
+        }
+
+        .raw-view-tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .raw-tab-btn {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .raw-tab-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .raw-tab-btn.active {
+            background: #667eea;
+            border-color: #667eea;
+            color: #fff;
+        }
+
+        .raw-content {
+            color: #43e97b;
+            line-height: 1.6;
+        }
+
+        .raw-content .json-key { color: #feca57; }
+        .raw-content .json-string { color: #43e97b; }
+        .raw-content .json-number { color: #ff6b6b; }
+        .raw-content .json-boolean { color: #48dbfb; }
+
+        /* Import Preview Modal */
+        .import-preview-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10001;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .import-preview-modal.active {
+            display: flex;
+        }
+
+        .import-preview-content {
+            background: #1a1a2e;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .import-preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .import-preview-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .import-preview-close {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .import-preview-close:hover {
+            color: #ff6b6b;
+        }
+
+        .import-preview-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .import-stat {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .import-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #43e97b;
+        }
+
+        .import-stat-label {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .import-preview-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .import-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .import-btn-cancel {
+            background: rgba(255, 255, 255, 0.1);
+            color: #888;
+        }
+
+        .import-btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .import-btn-confirm {
+            background: #43e97b;
+            color: #000;
+        }
+
+        .import-btn-confirm:hover {
+            background: #38d66f;
+            transform: translateY(-1px);
+        }
+
+        /* Tree View (default) - just show/hide */
+        .toc-tree-view {
+            display: block;
+        }
+
+        .toc-tree-view.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -1255,6 +1556,29 @@
                     <button class="action-btn primary" onclick="exportTOC()">💾 HTML</button>
                     <button class="action-btn" onclick="exportAsText()">📄 Text</button>
                     <button class="action-btn" onclick="exportAsJSON()">📊 JSON</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Import Data</label>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="triggerFileImport('csv')">📥 CSV</button>
+                    <button class="action-btn" onclick="triggerFileImport('json')">📥 JSON</button>
+                </div>
+                <div class="import-zone" id="importZone" onclick="triggerFileImport('any')">
+                    <div class="import-zone-icon">📁</div>
+                    <div class="import-zone-text">Drop CSV or JSON file here</div>
+                    <div class="import-zone-formats">Supports: .csv, .json (V2 TOC format)</div>
+                </div>
+                <input type="file" id="fileInput" class="hidden-file-input" accept=".csv,.json" onchange="handleFileSelect(event)">
+            </div>
+
+            <div class="control-group">
+                <label>View Mode</label>
+                <div class="view-mode-container">
+                    <button class="view-mode-btn active" onclick="setViewMode('tree', this)">🌳 Tree</button>
+                    <button class="view-mode-btn" onclick="setViewMode('table', this)">📋 Table</button>
+                    <button class="view-mode-btn" onclick="setViewMode('raw', this)">📝 Raw</button>
                 </div>
             </div>
 
@@ -1336,6 +1660,31 @@
         </div>
 
         <div class="toc-container">
+            <!-- Table View -->
+            <table class="toc-table-view" id="tocTableView">
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>Number</th>
+                        <th>Title</th>
+                    </tr>
+                </thead>
+                <tbody id="tableViewBody">
+                    <!-- Populated dynamically -->
+                </tbody>
+            </table>
+
+            <!-- Raw View -->
+            <div class="toc-raw-view" id="tocRawView">
+                <div class="raw-view-tabs">
+                    <button class="raw-tab-btn active" onclick="setRawFormat('json', this)">JSON</button>
+                    <button class="raw-tab-btn" onclick="setRawFormat('csv', this)">CSV</button>
+                </div>
+                <pre class="raw-content" id="rawContent"><!-- Populated dynamically --></pre>
+            </div>
+
+            <!-- Tree View (default) -->
+            <div class="toc-tree-view" id="tocTreeView">
             <!-- Front Matter -->
             <div class="section">
                 <div class="section-header" onclick="toggleSection(this)">
@@ -1585,6 +1934,8 @@
                 </div>
             </div>
 
+            </div><!-- End of toc-tree-view -->
+
             <!-- Task Management -->
             <div class="task-list-container">
                 <div class="task-list-header">
@@ -1598,18 +1949,20 @@
 
             <!-- Features Box -->
             <div class="corrections-box">
-                <div class="corrections-title">🚀 PROFESSIONAL FEATURES - FULLY STABILIZED</div>
+                <div class="corrections-title">🚀 PROFESSIONAL FEATURES - V2.1 WITH IMPORT</div>
                 <ul class="corrections-list">
                     <li>All 27 chapters fully editable with persistent state</li>
+                    <li>📥 NEW: CSV & JSON import with V2 TOC format recognition</li>
+                    <li>📊 NEW: Toggle between Tree, Table, and Raw views</li>
                     <li>🎤 Enhanced voice commands: "expand all", "toggle subsections", "go to chapter 5"</li>
                     <li>🎨 Professional gradient editor with live preview</li>
-                    <li>📄 New subsections toggle for focused editing</li>
+                    <li>📄 Subsections toggle for focused editing</li>
                     <li>✅ Advanced task management with priorities</li>
                     <li>⌨️ Full keyboard shortcuts (Ctrl+S, Ctrl+E, Ctrl+R)</li>
                     <li>💾 Auto-save with visual feedback</li>
                     <li>📱 Responsive design for all devices</li>
                     <li>🚀 Production-ready stability with error handling</li>
-                    <li>Multiple export formats (HTML/Text/JSON)</li>
+                    <li>Multiple export formats (HTML/Text/JSON) + drag-and-drop import</li>
                 </ul>
             </div>
         </div>
@@ -1618,6 +1971,26 @@
     <!-- Floating Action Button -->
     <div class="fab" onclick="scrollToTop()" title="Back to Top">↑</div>
 
+    <!-- Import Preview Modal -->
+    <div class="import-preview-modal" id="importPreviewModal">
+        <div class="import-preview-content">
+            <div class="import-preview-header">
+                <div class="import-preview-title">📥 Import Preview</div>
+                <button class="import-preview-close" onclick="closeImportPreview()">&times;</button>
+            </div>
+            <div class="import-preview-stats" id="importStats">
+                <!-- Stats populated dynamically -->
+            </div>
+            <div class="import-preview-data" id="importPreviewData" style="max-height: 300px; overflow-y: auto; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.85rem;">
+                <!-- Preview data -->
+            </div>
+            <div class="import-preview-actions">
+                <button class="import-btn import-btn-cancel" onclick="closeImportPreview()">Cancel</button>
+                <button class="import-btn import-btn-confirm" onclick="confirmImport()">Import Data</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Global state management
         let currentFontSize = 100;
@@ -1625,6 +1998,672 @@
         let isListening = false;
         let tasks = [];
         let autoSaveTimeout = null;
+        let currentViewMode = 'tree';
+        let currentRawFormat = 'json';
+        let pendingImportData = null;
+
+        // ==========================================
+        // IMPORT/EXPORT FUNCTIONALITY
+        // ==========================================
+
+        // Trigger file import dialog
+        function triggerFileImport(type) {
+            const fileInput = document.getElementById('fileInput');
+            if (type === 'csv') {
+                fileInput.accept = '.csv';
+            } else if (type === 'json') {
+                fileInput.accept = '.json';
+            } else {
+                fileInput.accept = '.csv,.json';
+            }
+            fileInput.click();
+        }
+
+        // Handle file selection
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const content = e.target.result;
+                const fileName = file.name.toLowerCase();
+
+                if (fileName.endsWith('.json')) {
+                    parseJSONImport(content);
+                } else if (fileName.endsWith('.csv')) {
+                    parseCSVImport(content);
+                } else {
+                    showNotification('❌ Unsupported file format. Use .csv or .json');
+                }
+            };
+            reader.readAsText(file);
+
+            // Reset file input
+            event.target.value = '';
+        }
+
+        // Parse CSV import
+        function parseCSVImport(content) {
+            try {
+                const lines = content.split('\n').filter(line => line.trim());
+                if (lines.length < 2) {
+                    showNotification('❌ CSV file is empty or invalid');
+                    return;
+                }
+
+                // Parse header
+                const header = parseCSVLine(lines[0]);
+                const requiredCols = ['type', 'title'];
+
+                // Check for required columns
+                const hasRequired = requiredCols.every(col =>
+                    header.map(h => h.toLowerCase().trim()).includes(col)
+                );
+
+                if (!hasRequired) {
+                    showNotification('❌ CSV must have "type" and "title" columns');
+                    return;
+                }
+
+                // Get column indices
+                const headerLower = header.map(h => h.toLowerCase().trim());
+                const typeIdx = headerLower.indexOf('type');
+                const titleIdx = headerLower.indexOf('title');
+                const numberIdx = headerLower.indexOf('number');
+
+                // Parse data rows
+                const tocData = {
+                    metadata: {
+                        title: "Imported TOC",
+                        version: "2.0",
+                        importDate: new Date().toISOString(),
+                        source: "CSV Import"
+                    },
+                    tasks: [],
+                    content: []
+                };
+
+                let stats = {
+                    sections: 0,
+                    parts: 0,
+                    chapters: 0,
+                    subsections: 0,
+                    total: 0
+                };
+
+                for (let i = 1; i < lines.length; i++) {
+                    const values = parseCSVLine(lines[i]);
+                    if (values.length < Math.max(typeIdx, titleIdx) + 1) continue;
+
+                    const type = values[typeIdx]?.trim().toLowerCase() || '';
+                    const title = values[titleIdx]?.trim() || '';
+                    const number = numberIdx >= 0 ? values[numberIdx]?.trim() : '';
+
+                    if (!title) continue;
+
+                    // Map CSV type to internal type
+                    let internalType = mapCSVType(type);
+
+                    tocData.content.push({
+                        type: internalType,
+                        title: title,
+                        number: number
+                    });
+
+                    // Update stats
+                    stats.total++;
+                    if (internalType.includes('section')) stats.sections++;
+                    else if (internalType.includes('part')) stats.parts++;
+                    else if (internalType.includes('chapter')) stats.chapters++;
+                    else if (internalType.includes('subsection')) stats.subsections++;
+                }
+
+                if (tocData.content.length === 0) {
+                    showNotification('❌ No valid TOC entries found in CSV');
+                    return;
+                }
+
+                // Show preview
+                showImportPreview(tocData, stats, 'CSV');
+
+            } catch (error) {
+                console.error('CSV parsing error:', error);
+                showNotification('❌ Error parsing CSV file');
+            }
+        }
+
+        // Parse CSV line handling quoted values
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current.trim());
+
+            return result;
+        }
+
+        // Map CSV type to internal type
+        function mapCSVType(type) {
+            const typeMap = {
+                'section': 'section-title',
+                'front matter': 'section-title',
+                'front-matter': 'section-title',
+                'introduction': 'section-title',
+                'intro': 'intro-title',
+                'matter': 'matter-title',
+                'part': 'part-title',
+                'chapter': 'chapter-title',
+                'subsection': 'subsection-title',
+                'major subsection': 'major-subsection-title',
+                'major-subsection': 'major-subsection-title',
+                'minor subsection': 'minor-subsection-title',
+                'minor-subsection': 'minor-subsection-title'
+            };
+
+            return typeMap[type.toLowerCase()] || 'subsection-title';
+        }
+
+        // Parse JSON import
+        function parseJSONImport(content) {
+            try {
+                const data = JSON.parse(content);
+
+                // Check if it's V2 format
+                if (data.metadata && data.content) {
+                    // V2 format
+                    const stats = calculateStats(data);
+                    showImportPreview(data, stats, 'JSON V2');
+                } else if (Array.isArray(data)) {
+                    // Array format - convert to V2
+                    const tocData = {
+                        metadata: {
+                            title: "Imported TOC",
+                            version: "2.0",
+                            importDate: new Date().toISOString(),
+                            source: "JSON Array Import"
+                        },
+                        tasks: [],
+                        content: data.map((item, idx) => ({
+                            type: item.type || 'subsection-title',
+                            title: item.title || item.value || item.text || '',
+                            number: item.number || ''
+                        }))
+                    };
+                    const stats = calculateStats(tocData);
+                    showImportPreview(tocData, stats, 'JSON Array');
+                } else {
+                    // Try to convert object to content array
+                    const tocData = convertObjectToTOC(data);
+                    const stats = calculateStats(tocData);
+                    showImportPreview(tocData, stats, 'JSON Object');
+                }
+
+            } catch (error) {
+                console.error('JSON parsing error:', error);
+                showNotification('❌ Invalid JSON file');
+            }
+        }
+
+        // Convert object-based JSON to TOC format
+        function convertObjectToTOC(data) {
+            const content = [];
+
+            // Handle exported V2 format with item_X keys
+            if (data.content && typeof data.content === 'object') {
+                const keys = Object.keys(data.content).sort((a, b) => {
+                    const numA = parseInt(a.replace('item_', ''));
+                    const numB = parseInt(b.replace('item_', ''));
+                    return numA - numB;
+                });
+
+                keys.forEach(key => {
+                    const item = data.content[key];
+                    content.push({
+                        type: item.type || 'subsection-title',
+                        title: item.value || item.title || '',
+                        number: ''
+                    });
+                });
+            }
+
+            return {
+                metadata: data.metadata || {
+                    title: "Imported TOC",
+                    version: "2.0",
+                    importDate: new Date().toISOString()
+                },
+                tasks: data.tasks || [],
+                content: content
+            };
+        }
+
+        // Calculate stats from TOC data
+        function calculateStats(data) {
+            const stats = {
+                sections: 0,
+                parts: 0,
+                chapters: 0,
+                subsections: 0,
+                total: 0
+            };
+
+            const content = Array.isArray(data.content) ? data.content : Object.values(data.content || {});
+
+            content.forEach(item => {
+                const type = item.type || '';
+                stats.total++;
+
+                if (type.includes('section-title') || type.includes('matter') || type.includes('intro')) {
+                    stats.sections++;
+                } else if (type.includes('part')) {
+                    stats.parts++;
+                } else if (type.includes('chapter')) {
+                    stats.chapters++;
+                } else {
+                    stats.subsections++;
+                }
+            });
+
+            return stats;
+        }
+
+        // Show import preview modal
+        function showImportPreview(data, stats, format) {
+            pendingImportData = data;
+
+            const modal = document.getElementById('importPreviewModal');
+            const statsContainer = document.getElementById('importStats');
+            const previewContainer = document.getElementById('importPreviewData');
+
+            // Populate stats
+            statsContainer.innerHTML = `
+                <div class="import-stat">
+                    <div class="import-stat-value">${stats.total}</div>
+                    <div class="import-stat-label">Total Items</div>
+                </div>
+                <div class="import-stat">
+                    <div class="import-stat-value">${stats.sections}</div>
+                    <div class="import-stat-label">Sections</div>
+                </div>
+                <div class="import-stat">
+                    <div class="import-stat-value">${stats.parts}</div>
+                    <div class="import-stat-label">Parts</div>
+                </div>
+                <div class="import-stat">
+                    <div class="import-stat-value">${stats.chapters}</div>
+                    <div class="import-stat-label">Chapters</div>
+                </div>
+                <div class="import-stat">
+                    <div class="import-stat-value">${stats.subsections}</div>
+                    <div class="import-stat-label">Subsections</div>
+                </div>
+            `;
+
+            // Populate preview (first 20 items)
+            const content = Array.isArray(data.content) ? data.content : Object.values(data.content || {});
+            const preview = content.slice(0, 20);
+            let previewHTML = `<div style="color: #888; margin-bottom: 10px;">Format: ${format} | Showing first ${Math.min(20, content.length)} of ${content.length} items</div>`;
+
+            preview.forEach((item, idx) => {
+                const title = item.title || item.value || '';
+                const type = item.type || '';
+                const color = type.includes('part') ? '#667eea' :
+                             type.includes('chapter') ? '#feca57' :
+                             type.includes('section') || type.includes('matter') ? '#43e97b' : '#888';
+                previewHTML += `<div style="color: ${color}; padding: 3px 0;">${idx + 1}. [${type}] ${title}</div>`;
+            });
+
+            if (content.length > 20) {
+                previewHTML += `<div style="color: #667eea; margin-top: 10px;">... and ${content.length - 20} more items</div>`;
+            }
+
+            previewContainer.innerHTML = previewHTML;
+
+            modal.classList.add('active');
+        }
+
+        // Close import preview
+        function closeImportPreview() {
+            const modal = document.getElementById('importPreviewModal');
+            modal.classList.remove('active');
+            pendingImportData = null;
+        }
+
+        // Confirm and apply import
+        function confirmImport() {
+            if (!pendingImportData) return;
+
+            try {
+                applyImportedData(pendingImportData);
+                closeImportPreview();
+                showNotification('✅ TOC data imported successfully!');
+
+                // Update views
+                updateTableView();
+                updateRawView();
+
+            } catch (error) {
+                console.error('Import error:', error);
+                showNotification('❌ Error applying imported data');
+            }
+        }
+
+        // Apply imported data to the DOM
+        function applyImportedData(data) {
+            const content = Array.isArray(data.content) ? data.content : Object.values(data.content || {});
+
+            // Get all input elements
+            const inputs = document.querySelectorAll('#tocTreeView input[type="text"]');
+
+            // Apply data to matching inputs
+            content.forEach((item, index) => {
+                if (inputs[index]) {
+                    const title = item.title || item.value || '';
+                    inputs[index].value = title;
+                }
+            });
+
+            // Import tasks if available
+            if (data.tasks && Array.isArray(data.tasks)) {
+                tasks = data.tasks;
+                saveTasks();
+                renderTasks();
+            }
+
+            // Save all data
+            saveAllData();
+        }
+
+        // ==========================================
+        // VIEW MODE FUNCTIONALITY
+        // ==========================================
+
+        // Set view mode
+        function setViewMode(mode, button) {
+            currentViewMode = mode;
+
+            // Update button states
+            document.querySelectorAll('.view-mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (button) button.classList.add('active');
+
+            // Hide all views
+            const treeView = document.getElementById('tocTreeView');
+            const tableView = document.getElementById('tocTableView');
+            const rawView = document.getElementById('tocRawView');
+
+            treeView.classList.add('hidden');
+            tableView.classList.remove('active');
+            rawView.classList.remove('active');
+
+            // Show selected view
+            switch(mode) {
+                case 'tree':
+                    treeView.classList.remove('hidden');
+                    break;
+                case 'table':
+                    tableView.classList.add('active');
+                    updateTableView();
+                    break;
+                case 'raw':
+                    rawView.classList.add('active');
+                    updateRawView();
+                    break;
+            }
+
+            showNotification(`📊 Switched to ${mode} view`);
+        }
+
+        // Update table view
+        function updateTableView() {
+            const tableBody = document.getElementById('tableViewBody');
+            if (!tableBody) return;
+
+            tableBody.innerHTML = '';
+
+            const tocData = collectTOCData();
+
+            tocData.forEach(item => {
+                const row = document.createElement('tr');
+                const levelClass = getLevelClass(item.type);
+
+                row.innerHTML = `
+                    <td class="${levelClass}">${formatTypeLabel(item.type)}</td>
+                    <td>${item.number || '-'}</td>
+                    <td class="${levelClass}">${item.title}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Get level class for styling
+        function getLevelClass(type) {
+            if (type.includes('section') || type.includes('matter') || type.includes('intro')) return 'level-section';
+            if (type.includes('part')) return 'level-part';
+            if (type.includes('chapter')) return 'level-chapter';
+            if (type.includes('major') || type.includes('minor')) return 'level-minor';
+            return 'level-subsection';
+        }
+
+        // Format type label
+        function formatTypeLabel(type) {
+            return type.replace('-title', '').replace(/-/g, ' ').toUpperCase();
+        }
+
+        // Update raw view
+        function updateRawView() {
+            const rawContent = document.getElementById('rawContent');
+            if (!rawContent) return;
+
+            const tocData = collectTOCData();
+
+            if (currentRawFormat === 'json') {
+                const jsonOutput = {
+                    metadata: {
+                        title: "The Art of Calisthenics",
+                        version: "2.0",
+                        exportDate: new Date().toISOString(),
+                        totalItems: tocData.length
+                    },
+                    tasks: tasks,
+                    content: tocData.map((item, idx) => ({
+                        [`item_${idx}`]: {
+                            type: item.type,
+                            value: item.title,
+                            number: item.number
+                        }
+                    })).reduce((acc, curr) => ({...acc, ...curr}), {})
+                };
+                rawContent.textContent = JSON.stringify(jsonOutput, null, 2);
+            } else {
+                // CSV format
+                let csvOutput = 'type,number,title\n';
+                tocData.forEach(item => {
+                    const escapedTitle = item.title.includes(',') ? `"${item.title}"` : item.title;
+                    csvOutput += `${formatTypeLabel(item.type)},${item.number || ''},${escapedTitle}\n`;
+                });
+                rawContent.textContent = csvOutput;
+            }
+        }
+
+        // Set raw format
+        function setRawFormat(format, button) {
+            currentRawFormat = format;
+
+            document.querySelectorAll('.raw-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (button) button.classList.add('active');
+
+            updateRawView();
+        }
+
+        // Collect TOC data from DOM
+        function collectTOCData() {
+            const data = [];
+            const treeView = document.getElementById('tocTreeView');
+            if (!treeView) return data;
+
+            // Collect from sections (Front Matter, Introduction)
+            treeView.querySelectorAll('.section').forEach(section => {
+                const titleEl = section.querySelector('.section-title');
+                if (titleEl) {
+                    data.push({
+                        type: 'section-title',
+                        title: titleEl.textContent,
+                        number: ''
+                    });
+                }
+
+                section.querySelectorAll('.matter-title, .intro-title').forEach(input => {
+                    data.push({
+                        type: input.classList.contains('matter-title') ? 'matter-title' : 'intro-title',
+                        title: input.value,
+                        number: ''
+                    });
+                });
+            });
+
+            // Collect from parts
+            treeView.querySelectorAll('.part').forEach(part => {
+                const titleEl = part.querySelector('.part-title');
+                if (titleEl) {
+                    data.push({
+                        type: 'part-title',
+                        title: titleEl.textContent,
+                        number: ''
+                    });
+                }
+
+                part.querySelectorAll('.chapter').forEach(chapter => {
+                    const numEl = chapter.querySelector('.chapter-number');
+                    const titleInput = chapter.querySelector('.chapter-title');
+
+                    if (titleInput) {
+                        data.push({
+                            type: 'chapter-title',
+                            title: titleInput.value,
+                            number: numEl ? numEl.textContent.replace(':', '').trim() : ''
+                        });
+                    }
+
+                    // Regular subsections
+                    chapter.querySelectorAll('.subsection').forEach(sub => {
+                        const subNum = sub.querySelector('.subsection-number');
+                        const subTitle = sub.querySelector('.subsection-title');
+                        if (subTitle) {
+                            data.push({
+                                type: 'subsection-title',
+                                title: subTitle.value,
+                                number: subNum ? subNum.textContent : ''
+                            });
+                        }
+                    });
+
+                    // Major subsections
+                    chapter.querySelectorAll('.major-subsection').forEach(major => {
+                        const majorNum = major.querySelector('.major-subsection-number');
+                        const majorTitle = major.querySelector('.major-subsection-title');
+                        if (majorTitle) {
+                            data.push({
+                                type: 'major-subsection-title',
+                                title: majorTitle.value,
+                                number: majorNum ? majorNum.textContent : ''
+                            });
+                        }
+
+                        // Minor subsections
+                        major.querySelectorAll('.minor-subsection').forEach(minor => {
+                            const minorNum = minor.querySelector('.minor-subsection-number');
+                            const minorTitle = minor.querySelector('.minor-subsection-title');
+                            if (minorTitle) {
+                                data.push({
+                                    type: 'minor-subsection-title',
+                                    title: minorTitle.value,
+                                    number: minorNum ? minorNum.textContent : ''
+                                });
+                            }
+                        });
+                    });
+                });
+            });
+
+            return data;
+        }
+
+        // ==========================================
+        // DRAG AND DROP FUNCTIONALITY
+        // ==========================================
+
+        // Setup drag and drop
+        function setupDragAndDrop() {
+            const importZone = document.getElementById('importZone');
+            if (!importZone) return;
+
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                importZone.addEventListener(eventName, preventDefaults, false);
+                document.body.addEventListener(eventName, preventDefaults, false);
+            });
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                importZone.addEventListener(eventName, () => {
+                    importZone.classList.add('dragover');
+                }, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                importZone.addEventListener(eventName, () => {
+                    importZone.classList.remove('dragover');
+                }, false);
+            });
+
+            importZone.addEventListener('drop', handleDrop, false);
+        }
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+
+            if (files.length > 0) {
+                const file = files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const content = e.target.result;
+                    const fileName = file.name.toLowerCase();
+
+                    if (fileName.endsWith('.json')) {
+                        parseJSONImport(content);
+                    } else if (fileName.endsWith('.csv')) {
+                        parseCSVImport(content);
+                    } else {
+                        showNotification('❌ Please drop a .csv or .json file');
+                    }
+                };
+
+                reader.readAsText(file);
+            }
+        }
 
         // Initialize application
         function init() {
@@ -1647,6 +2686,9 @@
 
                 // Set up auto-save
                 setupAutoSave();
+
+                // Set up drag and drop for import
+                setupDragAndDrop();
 
                 console.log('✅ TOC Editor initialized successfully!');
             } catch (error) {
