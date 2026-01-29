@@ -6,6 +6,16 @@
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue)](https://github.com/gabosaturno11/interactive-toc-editor)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
+## OPEN THE APPS
+
+| App | Link |
+|-----|------|
+| **Interactive TOC Editor** | [Open App](https://gabosaturno11.github.io/interactive-toc-editor/) |
+| **Saturno Solar System** | [Open App](https://gabosaturno11.github.io/saturno-solar-system/) |
+| **Saturno Command Center** | [Open App](https://gabosaturno11.github.io/saturno-command-center/) |
+
+---
+
 ## ✨ PROFESSIONAL FEATURES
 
 ### 🎨 **Advanced Visual Editor**
