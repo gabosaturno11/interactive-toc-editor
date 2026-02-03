@@ -12,7 +12,7 @@
 |-----|------|
 | **Interactive TOC Editor** | [Open App](https://gabosaturno11.github.io/interactive-toc-editor/) |
 | **Saturno Solar System** | [Open App](https://gabosaturno11.github.io/saturno-solar-system/) |
-| **Saturno Command Center** | [Open App](https://gabosaturno11.github.io/saturno-command-center/) |
+| **Victory Belt CC** | [Open App](https://gabosaturno11.github.io/victory-belt-cc/) |
 
 ---
 
